@@ -7,7 +7,13 @@ function App() {
   // 0で初期化してsteteを定義
   const [ count, setCount ] = useState( 0 );
 
-  const increment = () => setCount( count + 1 );
+  const increment = () => {
+    setCount( count + 1 );
+
+    // ログに出力しても即座には影響されていない
+    console.log( count );
+  }; 
+
   const decrement = () => setCount( count - 1 );
 
   return (
