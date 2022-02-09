@@ -36,6 +36,7 @@ function App() {
           <h1>電源 { power ? 'ON' : 'OFF' }</h1>
           <button onClick={ () => setPower( true ) }>ON</button>
           <button onClick={ () => setPower( false ) }>OFF</button>
+          <button onClick={ () => setPower( prevState => !prevState ) }>ON / OFF</button>
         </div>
 
         <img src={logo} className="App-logo" alt="logo" />
