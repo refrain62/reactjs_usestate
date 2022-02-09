@@ -33,9 +33,28 @@ function App() {
     console.log( email, password );
   };
 
+  //　入力フォームをまとめる方法
+  const [ form, setForm ] = useState( { email2: '', password2: '' } );
+  const handleChange = ( e ) => {
+    setForm( (prevState) => {
+      return {
+        ...prevState,
+        [ e.target.name ]: e.target.value
+      };
+    });
+  };
+  const hadnleSend2 = ( e ) => {
+    // 既定の処理をキャンセル（ここではSubmit処理）
+    e.preventDefault();
+
+    // ログに出力
+    console.log( form );
+  };
+
   return (
     <div className="App">
       <header className="App-header">
+        
         <div style={{ textAlign: 'center', marginTop: '2em' }}>
           <h1>useStateでフォーム</h1>
           <form onSubmit={ hadnleSend }>
@@ -56,6 +75,29 @@ function App() {
                 />
             </div>
             <button type="submit">フォームデータ送信</button>
+          </form>
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: '2em' }}>
+          <h1>useStateでフォーム2</h1>
+          <form onSubmit={ hadnleSend2 }>
+            <div>
+              <label>メールアドレス2：</label>
+              <input
+                name="email2"
+                type="email"
+                onChange={ handleChange }
+                />
+            </div>
+            <div>
+              <label>パスワード：</label>
+              <input
+                name="password2"
+                type="password"
+                onChange={ handleChange }
+                />
+            </div>
+            <button type="submit">フォームデータ送信2</button>
           </form>
         </div>
 
