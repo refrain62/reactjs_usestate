@@ -7,14 +7,17 @@ function App() {
   // 0で初期化してsteteを定義
   const [ count, setCount ] = useState( 0 );
 
+  const increment = () => setCount( count + 1 );
+  const decrement = () => setCount( count - 1 );
+
   return (
     <div className="App">
       <header className="App-header">
         <div>
           <h1>Counter</h1>
           <h2>カウント：{ count }</h2>
-          <button onClick={() => setCount( count + 1 )}>＋</button>
-          <button onClick={() => setCount( count - 1 )}>－</button>
+          <button onClick={ increment }>＋</button>
+          <button onClick={ decrement }>－</button>
         </div>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
