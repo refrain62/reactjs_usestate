@@ -1,4 +1,24 @@
-# Getting Started with Create React App
+# Eeact Hook useStateサンプル
+https://reffect.co.jp/react/react-hook-usestate-understand の写経
+
+## プロジェクトの作成
+```
+npx create-react-app reactjs_usestate
+```
+
+## リポジトリに追加
+```
+git remote add origin https://github.com/refrain62/reactjs_usestate.git
+git branch -M main
+git push -u origin main
+```
+
+## プロジェクトの起動
+```
+yarn start
+```
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
