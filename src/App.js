@@ -1,10 +1,19 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  // 0で初期化してsteteを定義
+  const [ count, setCount ] = useState( 0 );
+
   return (
     <div className="App">
       <header className="App-header">
+        <div>
+          <h1>Counter</h1>
+          <h2>カウント：{ count }</h2>
+        </div>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
