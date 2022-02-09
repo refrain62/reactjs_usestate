@@ -7,6 +7,9 @@ function App() {
   // 0で初期化してsteteを定義
   const [ count, setCount ] = useState( 0 );
 
+  console.log( '再描写' );
+  console.log( count ); 
+
   const increment = () => {
     setCount( count + 1 );
 
