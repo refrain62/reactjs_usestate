@@ -36,10 +36,7 @@ function App() {
   //　入力フォームをまとめる方法
   const [ form, setForm ] = useState( { email2: '', password2: '' } );
   const handleChange = ( e ) => {
-    setForm({
-      ...form,
-      [ e.target.name ]: e.target.value,
-    });
+    setForm( Object.assign( form, { [ e.target.name ]: e.target.value } ) );
   };
   const hadnleSend2 = ( e ) => {
     // 既定の処理をキャンセル（ここではSubmit処理）
