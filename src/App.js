@@ -22,9 +22,43 @@ function App() {
 
   const decrement = () => setCount( count - 1 );
 
+  // 入力フォーム用
+  const [ email, setEmail ] = useState( '' );
+  const [ password, setPassword ] = useState( '' );
+  const hadnleSend = ( e ) => {
+    // 既定の処理をキャンセル（ここではSubmit処理）
+    e.preventDefault();
+
+    // ログに出力
+    console.log( email, password );
+  };
+
   return (
     <div className="App">
       <header className="App-header">
+        <div style={{ textAlign: 'center', marginTop: '2em' }}>
+          <h1>useStateでフォーム</h1>
+          <form onSubmit={ hadnleSend }>
+            <div>
+              <label>メールアドレス：</label>
+              <input
+                name="email"
+                type="email"
+                onChange={ ( e ) => setEmail( e.target.value )}
+                />
+            </div>
+            <div>
+              <label>パスワード：</label>
+              <input
+                name="password"
+                type="password"
+                onChange={ ( e ) => setPassword( e.target.value )}
+                />
+            </div>
+            <button type="submit">フォームデータ送信</button>
+          </form>
+        </div>
+
         <div>
           <h1>Counter</h1>
           <h2>カウント：{ count }</h2>
