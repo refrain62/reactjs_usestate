@@ -7,6 +7,9 @@ function App() {
   // 0で初期化してsteteを定義
   const [ count, setCount ] = useState( 0 );
 
+  // boolean の変数定義
+  const [ power, setPower ] = useState( false );
+
   console.log( '再描写' );
   console.log( count ); 
 
@@ -28,6 +31,13 @@ function App() {
           <button onClick={ increment }>＋</button>
           <button onClick={ decrement }>－</button>
         </div>
+
+        <div>
+          <h1>電源 { power ? 'ON' : 'OFF' }</h1>
+          <button onClick={ () => setPower( true ) }>ON</button>
+          <button onClick={ () => setPower( false ) }>OFF</button>
+        </div>
+
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
